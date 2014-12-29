@@ -15,7 +15,7 @@ public class EasyjetTest extends BaseTestcase {
 	identifierString = "easyjet.com.";
     driver.get(baseUrl + "/en/");
     driver.findElement(By.id("acDestinationAirportShowAll")).click();
-    driver.findElement(By.xpath("(//div[@id='acDestinationAirport_ddl']/ul/li[51])[2]")).click();
+    driver.findElement(By.cssSelector("li.acl_odd.acl_visible")).click();
     driver.findElement(By.id("searchPodSubmitButton")).click();
     WebDriverWait wait = new WebDriverWait(driver, 20);
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("selectFlightsDetails")));
