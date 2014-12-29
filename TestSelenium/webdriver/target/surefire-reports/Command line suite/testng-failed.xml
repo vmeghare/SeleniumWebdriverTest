@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]" junit="true">
+  <test name="Command line test(failed)" junit="true">
+    <classes>
+      <class name="TestSelenium.webdriver.test.BaTest">
+        <methods>
+          <include name="testBaTestcase"/>
+        </methods>
+      </class> <!-- TestSelenium.webdriver.test.BaTest -->
+      <class name="TestSelenium.webdriver.test.VoyagesTest">
+        <methods>
+          <include name="testVoyagesTestcase"/>
+        </methods>
+      </class> <!-- TestSelenium.webdriver.test.VoyagesTest -->
+      <class name="TestSelenium.webdriver.test.VirginAtlanticTest">
+        <methods>
+          <include name="testVirginAtlanticTestcase"/>
+        </methods>
+      </class> <!-- TestSelenium.webdriver.test.VirginAtlanticTest -->
+      <class name="TestSelenium.webdriver.test.EasyjetTest">
+        <methods>
+          <include name="testEasyjetTestcase"/>
+        </methods>
+      </class> <!-- TestSelenium.webdriver.test.EasyjetTest -->
+      <class name="TestSelenium.webdriver.test.EurostarTest">
+        <methods>
+          <include name="testVoyagesTestcase"/>
+        </methods>
+      </class> <!-- TestSelenium.webdriver.test.EurostarTest -->
+      <class name="TestSelenium.webdriver.test.RyanairTest">
+        <methods>
+          <include name="testVoyagesTestcase"/>
+        </methods>
+      </class> <!-- TestSelenium.webdriver.test.RyanairTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->
