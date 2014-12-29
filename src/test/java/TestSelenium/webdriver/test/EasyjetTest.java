@@ -9,7 +9,7 @@ public class EasyjetTest extends BaseTestcase {
   private String baseUrl = "http://www.easyjet.com/";
 
 
-  @Test
+  //@Test
   public void testEasyjetTestcase() throws Exception {
 	EurostarCompetitorTestSuite.logger.info("-----------------------Starting easyjet.com ---------------------------");
 	identifierString = "easyjet.com.";
