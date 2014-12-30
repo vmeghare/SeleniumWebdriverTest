@@ -10,7 +10,7 @@ public class RyanairTest extends BaseTestcase{
 	private static String baseUrl = "http://www.ryanair.com/";
 
   @Test
-  public void testVoyagesTestcase() throws Exception {
+  public void testRyanairTestcase() throws Exception {
 	  	EurostarCompetitorTestSuite.logger.info("-----------------------Starting ryanair.com ---------------------------");
 		identifierString = "ryanair.com.";
 		driver.get(baseUrl);
