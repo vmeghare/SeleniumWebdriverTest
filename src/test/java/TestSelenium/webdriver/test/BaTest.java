@@ -41,8 +41,7 @@ public class BaTest extends BaseTestcase{
     }*/
 	
 	this.stats.markTime(identifierString+"outbound");
-	//report perf stats
-//	reportPerformanceStats();
+	this.reportPerformanceStats();
 
   }
   

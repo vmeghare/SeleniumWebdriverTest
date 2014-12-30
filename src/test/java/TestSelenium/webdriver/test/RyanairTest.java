@@ -21,6 +21,7 @@ public class RyanairTest extends BaseTestcase{
 		WebDriverWait wait = new WebDriverWait(driver, 20);
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("ng-app")));
 		this.stats.markTime(identifierString+"outbound");
+		this.reportPerformanceStats();
   }
 
 }

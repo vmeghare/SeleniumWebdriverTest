@@ -23,6 +23,7 @@ public class VirginAtlanticTest extends BaseTestcase {
 		wait.until(ExpectedConditions.presenceOfElementLocated(By.id("container")));
 
 		this.stats.markTime(identifierString+"outbound");
+		this.reportPerformanceStats();
 		
 		/*long before = System.currentTimeMillis();
 

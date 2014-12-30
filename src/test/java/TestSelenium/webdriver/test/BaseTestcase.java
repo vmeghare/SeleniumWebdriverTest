@@ -11,7 +11,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-import TestSelenium.webdriver.helper.ConsoleReporter;
+import TestSelenium.webdriver.graphite.SimpleGraphiteClient;
+import TestSelenium.webdriver.helper.GraphiteReporter;
 import TestSelenium.webdriver.helper.StatsCollector;
 import TestSelenium.webdriver.helper.StatsReporter;
 
@@ -32,7 +33,7 @@ public class BaseTestcase extends TestCase {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		stats = new StatsCollector(driver);
-		statsReporter = new ConsoleReporter();
+		statsReporter = new GraphiteReporter(new SimpleGraphiteClient("10.91.80.132", 2003));
 	}
 	
 	public int waitForExchangeFieldsToLoad(String pageToBeLoad) {

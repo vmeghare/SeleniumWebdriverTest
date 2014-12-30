@@ -27,6 +27,7 @@ public class VoyagesTest extends BaseTestcase{
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("dvViewJourneyHeader")));
 	
 	this.stats.markTime(identifierString+"outbound");
+	this.reportPerformanceStats();
   }
 
 }

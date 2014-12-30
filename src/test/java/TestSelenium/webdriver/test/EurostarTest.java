@@ -15,10 +15,11 @@ public class EurostarTest extends BaseTestcase{
 	driver.get(baseUrl);
 	identifierString = "eurostar.com.";
 	driver.findElement(By.id("dialog-element")).click();
-	//this.stats.markTime(identifierString+"homepage");
+	this.stats.markTime(identifierString+"homepage");
 	WebDriverWait wait = new WebDriverWait(driver, 20);
 	wait.until(ExpectedConditions.presenceOfElementLocated(By.id("main-content")));
 	this.stats.markTime(identifierString+"outbound");
+	this.reportPerformanceStats();
   }
 
 }

@@ -1,4 +1,4 @@
-activeProfiles=SeleniumTest
+activeProfiles=
 eclipse.preferences.version=1
 fullBuildGoals=process-test-resources
 resolveWorkspaceProjects=true
