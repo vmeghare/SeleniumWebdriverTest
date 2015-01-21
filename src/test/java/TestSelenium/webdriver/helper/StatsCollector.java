@@ -135,6 +135,7 @@ public final class StatsCollector {
       case StatsCollector.USER_TIMER:
         this.timer.setIdentifier(baseIdentifier);
         this.timer.setElapsedTime(this.getUserTime());
+        this.timer.setAggregatedResponseTime(this.getUserTime());
         break;
 
       default:
@@ -208,6 +209,17 @@ public final class StatsCollector {
     return this.eventList;
   }
 
+  public synchronized List<StatsData> transformStats() {
+	  List<StatsData> statsDataList = new ArrayList<StatsData>();
+	    while (this.iterator.hasNext()) {
+	    	StatsData data = new StatsData();
+	    	Timer reportTimer = (Timer) iterator.next();
+	    	data.setIdentifier(reportTimer.getIdentifier());
+	    	data.setResponseTime(reportTimer.getAggregatedResponseTime());
+	    }
+	    return statsDataList;
+  }
+  
   /**
    * Clear the array list which holds the stats.
    */

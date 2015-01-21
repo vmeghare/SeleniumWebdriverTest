@@ -9,6 +9,9 @@ public class Timer {
   private long ajaxStartTime;
   private long elapsedTime;
   private String identifier;
+  private long aggregatedResponseTime;
+  
+
   private static Logger logger;
 
   /**
@@ -77,6 +80,14 @@ public class Timer {
   public void setAjaxStartTime(long ajaxStartTime) {
     this.ajaxStartTime = ajaxStartTime;
   }
+  
+  public long getAggregatedResponseTime() {
+		return aggregatedResponseTime;
+	}
+
+	public void setAggregatedResponseTime(long aggregatedResponseTime) {
+		this.aggregatedResponseTime = aggregatedResponseTime;
+	}
 
   /**
    * Safely convert long to int.

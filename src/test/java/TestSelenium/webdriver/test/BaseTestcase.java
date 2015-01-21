@@ -12,6 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import TestSelenium.webdriver.graphite.SimpleGraphiteClient;
+import TestSelenium.webdriver.helper.CsvWriter;
 import TestSelenium.webdriver.helper.GraphiteReporter;
 import TestSelenium.webdriver.helper.StatsCollector;
 import TestSelenium.webdriver.helper.StatsReporter;
@@ -59,6 +60,7 @@ public class BaseTestcase extends TestCase {
 	public void reportPerformanceStats() {
 		this.statsReporter.setCollectedStats(this.stats.getCollectedStats());
 		this.statsReporter.reportStats();
+		CsvWriter.generateCsvFile("logs/output.csv", this.stats.transformStats());
 	}
 
 	@After
