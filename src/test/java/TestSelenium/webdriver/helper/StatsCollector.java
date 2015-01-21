@@ -15,7 +15,7 @@ import org.openqa.selenium.WebDriver;
 public final class StatsCollector {
   private List<Timer> eventList;
   private List<Timer> tempTimeCollector;
-  private Iterator iterator;
+  private Iterator<Timer> iterator;
   private Timer timer;
   private WebDriver webDriver;
 
@@ -211,11 +211,15 @@ public final class StatsCollector {
 
   public synchronized List<StatsData> transformStats() {
 	  List<StatsData> statsDataList = new ArrayList<StatsData>();
-	    while (this.iterator.hasNext()) {
+	  Iterator<Timer> duplIterator = this.eventList.iterator();
+	    while (duplIterator.hasNext()) {
 	    	StatsData data = new StatsData();
-	    	Timer reportTimer = (Timer) iterator.next();
-	    	data.setIdentifier(reportTimer.getIdentifier());
-	    	data.setResponseTime(reportTimer.getAggregatedResponseTime());
+	    	Timer reportTimer = (Timer) duplIterator.next();
+	    	if(reportTimer.getAggregatedResponseTime() > 0) {
+	    		data.setIdentifier(reportTimer.getIdentifier());
+		    	data.setResponseTime(reportTimer.getAggregatedResponseTime());
+		    	statsDataList.add(data);
+	    	}
 	    }
 	    return statsDataList;
   }
