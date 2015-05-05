@@ -21,7 +21,7 @@ public class BaseTestcase extends TestCase {
 	
 	protected WebDriver driver;
 	protected StatsCollector stats;
-	protected StatsReporter statsReporter;
+	//protected StatsReporter statsReporter;
 	protected String identifierString;
 	
 	private int minute = 0;
@@ -34,7 +34,7 @@ public class BaseTestcase extends TestCase {
 		driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		stats = new StatsCollector(driver);
-		statsReporter = new GraphiteReporter(new SimpleGraphiteClient("10.91.80.132", 2003));
+		//statsReporter = new GraphiteReporter(new SimpleGraphiteClient("10.91.80.132", 2003));
 	}
 	
 	public int waitForExchangeFieldsToLoad(String pageToBeLoad) {
@@ -58,8 +58,8 @@ public class BaseTestcase extends TestCase {
 	}
 
 	public void reportPerformanceStats() {
-		this.statsReporter.setCollectedStats(this.stats.getCollectedStats());
-		this.statsReporter.reportStats();
+//		this.statsReporter.setCollectedStats(this.stats.getCollectedStats());
+//		this.statsReporter.reportStats();
 		CsvWriter.generateCsvFile("logs/output.csv", this.stats.transformStats());
 	}
 
